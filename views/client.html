@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Account Manage</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+function $(id) {return document.getElementById(id)	}
+function check(){
+    var tel = $("tel").value
+    var pwd = $("pwd").value
+    var nickname = $("nickname").value
+    var username = $("username").value
+    var location = $("location").value
+
+    if (tel == "") {
+        alert("please enter mobile number")
+        return false
+    } else if (tel.length != 11) {
+        alert("must enter 11 digit mobile number")
+        return false
+    } else if (pwd == "") {
+        alert("please enter password")
+        return false
+    }  else if (pwd.length < 4) {
+        alert("password must 4-16 characters")
+        return false
+    } else if (nickname == "") {
+        alert("please enter nickname")
+        return false
+    }  else if (username == "") {
+        alert("please enter username")
+        return false
+    }  else if (location == "") {
+        alert("please enter location, such as : GuangZhou")
+        return false
+    } 
+}
+</script>
+<style type="text/css">
+    fieldset{width: 350px;background:#4876FF;height: 200px;margin: 150px 400px 0px}
+    </style>
+</head>
+<body bgcolor="#7EC0EE">
+<form action="/" method="POST">
+    <fieldset>
+    <label>Register</label>
+<label>[options == register]</label>
+<div>options:<input type="text" value="register" name="options"></div>
+<div>tel:<input type="text" name="mobile" id="tel"></div>
+<div>pwd:<input type="text" name="password" id="pwd"></div>
+<div>nickname:<input type="text" name="nickname" id="nickname"></div>
+<div>username:<input type="text" name="username" id="username"></div>
+<div>location:<input type="text" name="location" id="location"></div>
+<input type="submit" name="register" value="register" onclick="return check()" Submit/>
+</fieldset>
+</form>	
+<br>
+
+
+<form action="/" method="POST">
+    <fieldset>
+        <label>login</label>
+    
+<label>[options == login]</label>
+<div>options:<input type="text" value="login" name="options"></div>
+<div>tel:<input type="text" name="mobile" id="tel"></div>
+<div>pwd:<input type="text" name="password" id="pwd"></div>
+<input type="submit" name="login" value="login" Submit/>
+</fieldset>
+</form>	
+
+<form action="/" method="POST">
+    <fieldset>
+        <label>sendSMS</label>
+    
+<label>[options == send]</label>
+<div>options:<input type="text" value="sendSMS" name="options"></div>
+<div>tel-from:<input type="text" name="mobile-from" id="tel"></div>
+<div>tel-to:<input type="text" name="mobile-to" id="tel"></div>
+<div>content:<input type="text" name="content" id="content"></div>
+<input type="submit" name="sendSMS" value="sendSMS" Submit/>
+</fieldset>
+</form>	
+
+
+<form action="/" method="POST">
+    <fieldset>
+        <label>sendSMS</label>
+    
+<label>[options == deleteUser]</label>
+<div>options:<input type="text" value="deleteUser" name="options"></div>
+<div>sysAccount:<input type="text" name="sysAccount"></div>
+<div>sysPassword:<input type="password" name="sysPassword"></div>
+<div>userMobile:<input type="text" name="mobile"></div>
+<input type="submit" name="deleteUser" value="deleteUser" Submit/>
+</fieldset>
+</form>	
+
+</body>
+</html>
